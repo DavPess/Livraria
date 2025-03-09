@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+
+{% block conteudo %}
+    
+    <form action="{{ url_for('atualizar_autor') }}" method="post">
+        
+        <fieldset>
+            <!-- ID oculto para identificar o livro a ser atualizado -->
+            <input type="hidden" name="id" value="{{ id }}">
+            <!-- Seleção de Autor -->
+            <div class="form-group">
+                {{ form.autor.label(class="form-label")}}
+                {{ form.autor(class="form-control")}}
+                
+            </div>
+
+            <!-- Botão para salvar alterações -->
+            <div class="form-group"> 
+                {{ form.salvar(class="mt-2 btn btn-primary") }}
+                <a class="mt-2 btn btn-danger" href="{{ url_for('exibir_autor')}}">Voltar</a>
+              </div>
+
+            
+        </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+
+{% block conteudo %}
+
+<div class="container mt-4">
+  <h2 class="text-center">Bem-vindo à Livraria</h2>
+  <div id="carouselExampleAutoplaying" class="mb-2 carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+
+        <img class="mb-2 img-fluid d-none d-xl-block d-block w-100" src="./static/imagens/biblioteca_copia.png" alt="Biblioteca">
+
+        <div class="carousel-caption d-none d-md-block"></div>
+      </div>    
+  </div>
+
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card text-center">
+              <div class="card-body">
+                  <h5 class="card-title">Livros</h5>
+                  <p class="card-text">Veja todos os livros disponíveis.</p>
+                  <a href="{{ url_for('exibir_livro') }}" class="btn btn-primary">Ver Livros</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card text-center">
+              <div class="card-body">
+                  <h5 class="card-title">Gêneros Literários</h5>
+                  <p class="card-text">Explore diferentes gêneros literários.</p>
+                  <a href="{{ url_for('exibir_genero') }}" class="btn btn-secondary">Ver Gêneros</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card text-center">
+              <div class="card-body">
+                  <h5 class="card-title">Autores</h5>
+                  <p class="card-text">Conheça os autores disponíveis.</p>
+                  <a href="{{ url_for('exibir_autor') }}" class="btn btn-info">Ver Autores</a>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+<table class="mt-2 table table-striped table-responsive table-bordered">
+  <thead class="thead-default">
+  </thead>
+  <body> 
+</table>
+{% endblock %}
+
