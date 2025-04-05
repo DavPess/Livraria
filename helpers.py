@@ -14,3 +14,6 @@ class FormularioAutor(FlaskForm):
     autor = StringField("Autor", validators=[DataRequired()])
     salvar = SubmitField("Salvar")
 
+class FormularioGenero(FlaskForm):
+    genero = StringField("Genero", validators=[DataRequired()])
+    salvar = SubmitField("Salvar")
