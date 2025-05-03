@@ -40,9 +40,9 @@ TABLES["Genero"] = ('''
 TABLES["Livros"] = ('''
     CREATE TABLE `livros` (
         `id` INT(11) AUTO_INCREMENT PRIMARY KEY,
-        `titulo` VARCHAR(50) NOT NULL,
-        `genero_id` INT NOT NULL,
-        `autor_id` INT NOT NULL,
+        `nome` VARCHAR(50) NOT NULL,
+        `genero_id` INT,
+        `autor_id` INT,
         FOREIGN KEY (`genero_id`) REFERENCES `genero`(`id`),
         FOREIGN KEY (`autor_id`) REFERENCES `autor`(`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -94,9 +94,21 @@ autores_dict = {nome: id for id, nome in cursor.fetchall()}
 cursor.execute("SELECT id, nome FROM genero")
 generos_dict = {nome: id for id, nome in cursor.fetchall()}
 
+cursor.execute("SELECT id, nome FROM livros")
+livros_dict = {nome: id for id, nome in cursor.fetchall()}
 # Inserindo livros com os IDs corretos
 
+# inserindo livros
+livros_sql = "INSERT INTO livros (nome) VALUES (%s)"
+livros = [
+     
+]
+cursor.executemany(livros_sql, livros)
 
+# cursor.execute('select * from livraria.livros')
+# print(' -------------  Livros:  -------------')
+# for livros in cursor.fetchall():
+#     print(livros[1])
 
 
 # Consultando os dados
@@ -112,8 +124,8 @@ for genero in cursor.fetchall():
 
 cursor.execute("SELECT * FROM livros")
 print(" ------------- Livros:  -------------")
-for livro in cursor.fetchall():
-    print(livro[1])
+for livros in cursor.fetchall():
+    print(livros[1])
 
 # Commitando as alterações
 conn.commit()

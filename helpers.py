@@ -5,7 +5,7 @@ from wtforms import StringField, SubmitField, validators, SelectField
 from wtforms.validators import DataRequired, Length
 
 class FormularioLivro(FlaskForm):
-    titulo = StringField("Título", validators=[DataRequired()])
+    nome = StringField("Livros", validators=[DataRequired()])
     genero = SelectField("Gênero", choices=[], coerce=int, validators=[DataRequired()])
     autor = SelectField("Autor(a)", choices=[], coerce=int, validators=[DataRequired()])
     salvar = SubmitField("Salvar")
@@ -16,4 +16,8 @@ class FormularioAutor(FlaskForm):
 
 class FormularioGenero(FlaskForm):
     genero = StringField("Genero", validators=[DataRequired()])
+    salvar = SubmitField("Salvar")
+
+class FormularioLivros(FlaskForm):
+    nome = StringField("Livros", validators=[DataRequired()])
     salvar = SubmitField("Salvar")

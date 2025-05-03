@@ -24,17 +24,17 @@
         class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
         style="width: 280px; height: 100%; min-height: 850px">
         <a
-          href="#"
+          href="{{url_for('index')}}"
           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32">
             <use xlink:href="#bootstrap"></use>
           </svg>
           <span class="fs-4">Bem vindo</span>
         </a>
-        <hr />
+        <hr/>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link {{'active' if active == 'livros' else 'text-white'}}" {{'aria-current="page"' if active == 'livros' else ''}}>
+            <a href="{{ url_for('exibir_livro')}}" class="nav-link {{'active' if active == 'nome' else 'text-white'}}" {{'aria-current="page"' if active == 'nome' else ''}}>
               <svg class="bi me-2" width="16" height="16">
                 <use xlink:href="#home"></use>
               </svg>
@@ -57,14 +57,7 @@
              Autor(a)
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#grid"></use>
-              </svg>
-              Lista
-            </a>
-          </li>
+        
          </ul>
         <hr />
       </div>
